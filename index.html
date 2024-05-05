@@ -72,115 +72,100 @@
             <input type="range" class="form-control-range" id="exampleRange">
         </div>
 
-        <div class="container">
-            <div class="row mb-3">
-                <!-- Buttons -->
-                <div class="col-6 col-md-4 col-lg-2 mb-2">
-                    <div class="btn btn-primary btn-block">Button</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 mb-2">
-                    <div class="btn btn-secondary btn-block">Button</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 mb-2">
-                    <div class="btn btn-success btn-block">Button</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 mb-2">
-                    <div class="btn btn-danger btn-block">Button</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 mb-2">
-                    <div class="btn btn-warning btn-block">Button</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 mb-2">
-                    <div class="btn btn-info btn-block">Button</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 mb-2">
-                    <div class="btn btn-light btn-block">Button</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 mb-2">
-                    <div class="btn btn-dark btn-block">Button</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 mb-2">
-                    <div class="btn btn-link btn-block">Button</div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 mb-2">
-                    <div class="btn btn-primary btn-block">Button</div>
-                </div>
-                <!-- Repeat the row to fill all 6 rows with similar content -->
+        <div class="row mb-3">
+            <!-- Buttons -->
+            <div class="col-6 col-md-4 col-lg-2 mb-2">
+                <div class="btn btn-primary btn-block">Button</div>
             </div>
+            <div class="col-6 col-md-4 col-lg-2 mb-2">
+                <div class="btn btn-secondary btn-block">Button</div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 mb-2">
+                <div class="btn btn-success btn-block">Button</div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 mb-2">
+                <div class="btn btn-danger btn-block">Button</div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 mb-2">
+                <div class="btn btn-warning btn-block">Button</div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 mb-2">
+                <div class="btn btn-info btn-block">Button</div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 mb-2">
+                <div class="btn btn-light btn-block">Button</div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 mb-2">
+                <div class="btn btn-dark btn-block">Button</div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 mb-2">
+                <div class="btn btn-link btn-block">Button</div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 mb-2">
+                <div class="btn btn-primary btn-block">Button</div>
+            </div>
+            <!-- Repeat the row to fill all 6 rows with similar content -->
+        </div>
 
-            <style>
-                .custom-control-label::before, .custom-control-label::after {
-                    position: absolute;
-                    top: .25rem;
-                    left: .25rem;
-                    display: block;
-                    width: 1.5rem;
-                    height: 1.5rem;
-                    margin-top: 0;
-                    background-size: contain;
-                    content: "";
-                }
+        <style>
+            .custom-control-label::before {
+                background-color: #f8f9fa; /* Default non-checked background color */
+                border: 1px solid #adb5bd; /* Standard Bootstrap border */
+                width: 90px; /* Width of the pseudo-element */
+                height: 34px; /* Height of the pseudo-element */
+                border-radius: 0.25rem; /* Rounded corners like Bootstrap buttons */
+                transition: background-color 0.15s, border-color 0.15s; /* Smooth transitions for color and border */
+            }
 
-                .custom-control-label::before {
-                    background-color: #f8f9fa;
-                    border: #adb5bd solid 1px;
-                }
+            .custom-control-input:checked ~ .custom-control-label::before {
+                background-color: #007bff; /* Checked state background color */
+                border-color: #007bff; /* Checked state border color */
+            }
 
-                .custom-control-input:checked ~ .custom-control-label::after {
-                    background-color: #007bff;
-                    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.974-2.07L0 3.22l2.974 3.02 4.59-4.612z'/%3e%3c/svg%3e");
-                }
+            .custom-control-label {
+                cursor: pointer;
+                display: block;
+                padding: 6px 12px; /* Padding similar to Bootstrap buttons */
+                color: #fff; /* Text color for better contrast on toggles */
+                background-color: transparent; /* Ensure no background color */
+                border: none; /* No border on the label itself */
+            }
 
-                .custom-control-label {
-                    cursor: pointer;
-                    margin-bottom: 0; /* Makes the label's clickable area more specific */
-                }
+            .custom-control-label::after {
+                content: attr(data-off);
+                position: absolute;
+                left: 12px; /* Position the text inside the pseudo-element */
+                top: 7px; /* Vertically center the text */
+            }
 
-                .custom-control {
-                    padding-left: 2rem; /* Space for the fake checkbox */
-                }
-            </style>
+            .custom-control-input:checked ~ .custom-control-label::after {
+                content: attr(data-on);
+            }
+        </style>
 
-            <div class="row text-center mb-3">
-                <div class="col-6 col-md-4 col-lg-2 mb-2">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck1">
-                        <label class="custom-control-label" for="customCheck1"></label>
-                    </div>
+        <div class="row mb-3 text-center d-flex justify-content-center align-items-center">
+            <div class="col-md-4">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customToggle1">
+                    <label class="custom-control-label" for="customToggle1" data-on="On" data-off="Off">Toggle
+                        Button 1</label>
                 </div>
-                <div class="col-6 col-md-4 col-lg-2 mb-2">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck2">
-                        <label class="custom-control-label" for="customCheck2"></label>
-                    </div>
+            </div>
+            <div class="col-md-4">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customToggle2" checked>
+                    <label class="custom-control-label" for="customToggle2" data-on="On" data-off="Off">Toggle
+                        Button 2</label>
                 </div>
-                <div class="col-6 col-md-4 col-lg-2 mb-2">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck3">
-                        <label class="custom-control-label" for="customCheck3"></label>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 mb-2">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck4">
-                        <label class="custom-control-label" for="customCheck4"></label>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 mb-2">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck5">
-                        <label class="custom-control-label" for="customCheck5"></label>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-2 mb-2">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="customCheck6">
-                        <label class="custom-control-label" for="customCheck6"></label>
-                    </div>
+            </div>
+            <div class="col-md-4">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="customToggle3" checked>
+                    <label class="custom-control-label" for="customToggle3" data-on="On" data-off="Off">Toggle
+                        Button 3</label>
                 </div>
             </div>
         </div>
-
 
         <div type="submit" class="btn btn-primary">Submit</div>
         <div type="reset" class="btn btn-secondary ml-2">Reset</div>
