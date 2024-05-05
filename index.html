@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons, Selectors, & Input</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Optional: Custom CSS styles */
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h2>Buttons, Selectors, & Input</h2>
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                   placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <div class="form-group">
+            <label for="exampleSelect1">Example select</label>
+            <select class="form-control" id="exampleSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleTextarea">Example textarea</label>
+            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleFile">File input</label>
+            <input type="file" class="form-control-file" id="exampleFile">
+        </div>
+        <fieldset class="form-group">
+            <legend>Radio buttons</legend>
+            <div class="form-check">
+                <input type="radio" id="exampleRadio1" name="exampleRadios" class="form-check-input">
+                <label class="form-check-label" for="exampleRadio1">First radio</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" id="exampleRadio2" name="exampleRadios" class="form-check-input">
+                <label class="form-check-label" for="exampleRadio2">Second radio</label>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <label for="exampleRange">Example range</label>
+            <input type="range" class="form-control-range" id="exampleRange">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="reset" class="btn btn-secondary ml-2">Reset</button>
+    </form>
+</div>
+</body>
+
+</html>
